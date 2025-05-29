@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Historial de Transacciones</title>
+</head>
+
+<body onload="cargarTransacciones()">
+    <div class="main-content">
+        <h1><u>HISTORIAL DE TRANSACCIONES</u></h1>
+
+        <div class="actions-container">
+            <button class="boton-divisas boton-accion-secundario" onclick="window.location.href='index.html'">
+                Volver al Inicio
+            </button>
+            <button class="boton-divisas boton-accion" onclick="borrarTodasTransacciones()">
+                Borrar Todas las Transacciones
+            </button>
+        </div>
+
+        <table id="tablaTransacciones">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Cliente</th>
+                    <th>Documento</th>
+                    <th>Moneda</th>
+                    <th>Cantidad</th>
+                    <th>Total</th>
+                    <th class="acciones-col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function cargarTransacciones() {
+            const historial = JSON.parse(localStorage.getItem('transacciones')) || [];
+            const tbody = document.getElementById('cuerpoTabla');
+
+            if (historial.length === 0) {
+                tbody.innerHTML = `
+                    <tr>
+                        <td colspan="8" class="mensaje-vacio">No hay transacciones registradas</td>
+                    </tr>
+                `;
+                return;
+            }
+
+            tbody.innerHTML = historial.map((trans, index) => `
+                <tr>
+                    <td>${trans.fecha}</td>
+                    <td>${trans.hora}</td>
+                    <td>${trans.cliente}</td>
+                    <td>${trans.documento}</td>
+                    <td>${trans.moneda}</td>
+                    <td>${trans.cantidad}</td>
+                    <td>$${trans.total}</td>
+                    <td class="acciones-col">
+                        <span class="delete-icon" onclick="borrarTransaccion(${index})" title="Eliminar transacción">
+                            ✕
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function borrarTransaccion(index) {
+            if (!confirm('¿Está seguro que desea eliminar esta transacción?')) return;
+
+            const historial = JSON.parse(localStorage.getItem('transacciones')) || [];
+            historial.splice(index, 1);
+            localStorage.setItem('transacciones', JSON.stringify(historial));
+            cargarTransacciones();
+        }
+
+        function borrarTodasTransacciones() {
+            if (!confirm('¿Está seguro que desea eliminar TODAS las transacciones? Esta acción no se puede deshacer.')) return;
+
+            localStorage.removeItem('transacciones');
+            cargarTransacciones();
+        }
+    </script>
+</body>
+
+</html>

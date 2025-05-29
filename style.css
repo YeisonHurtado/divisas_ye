@@ -1,0 +1,245 @@
+/* Reset y fuentes base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.main-content {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h1,
+h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+u {
+    text-decoration: underline solid #007bff;
+}
+
+/* Enlaces del menú */
+.links ol {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.links li {
+    margin: 15px 0;
+}
+
+.links a {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.links a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Botón volver al inicio */
+.boton-inicio {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.boton-inicio a {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.boton-inicio a:hover {
+    background-color: #0056b3;
+}
+
+/* Tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+th,
+td {
+    padding: 14px 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+thead {
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    font-style: italic;
+    color: #999;
+}
+
+/* Formularios */
+form table {
+    width: 100%;
+}
+
+form td {
+    padding: 10px;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+form input[readonly] {
+    background-color: #e9ecef;
+    color: #555;
+}
+
+/* Botones de formulario */
+.botones-accion {
+    margin-top: 20px;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.boton-divisas {
+    padding: 10px 20px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.boton-divisas:hover {
+    background-color: #218838;
+}
+
+/* Estilos específicos para esta página */
+.actions-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.boton-accion {
+    background-color: #C0392B;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton-accion:hover {
+    background-color: #A93226;
+}
+
+.boton-accion-secundario {
+    background-color: #2C3E50;
+}
+
+.boton-accion-secundario:hover {
+    background-color: #1A252F;
+}
+
+.acciones-col {
+    text-align: center;
+    width: 100px;
+}
+
+.mensaje-vacio {
+    text-align: center;
+    color: #7F8C8D;
+    padding: 2rem;
+    font-style: italic;
+}
+
+.delete-icon {
+    color: #C0392B;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.delete-icon:hover {
+    color: #A93226;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    h1,
+    h2 {
+        font-size: 22px;
+    }
+
+    .links a,
+    .boton-divisas,
+    .boton-inicio a {
+        font-size: 16px;
+        padding: 10px 14px;
+    }
+
+    table,
+    form table {
+        font-size: 14px;
+    }
+}

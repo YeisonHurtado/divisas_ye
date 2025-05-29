@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="compramoneda.js"></script>
+    <title>Compra de Moneda Extranjera</title>
+</head>
+
+<body onload="init()">
+    <div class="main-content">
+        <h1><u>COMPRA DE MONEDA EXTRANJERA</u></h1>
+
+        <form id="formCompra">
+            <table>
+                <tr>
+                    <td>Tipo de Documento:</td>
+                    <td>
+                        <select id="tipoDoc" required>
+                            <option value="1">Seleccione una Opción</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Número de Documento:</td>
+                    <td><input type="number" id="numDoc" required></td>
+                </tr>
+                <tr>
+                    <td>Nombre del Cliente:</td>
+                    <td><input type="text" id="nombreCliente" readonly></td>
+                </tr>
+                <tr>
+                    <td>Moneda a Comprar:</td>
+                    <td>
+                        <select id="moneda" required>
+                            <option value="1">Seleccione una Opción</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cantidad a Comprar:</td>
+                    <td><input type="number" id="cantidad" required></td>
+                </tr>
+                <tr>
+                    <td>Tasa de Compra:</td>
+                    <td><input type="number" id="tasa" readonly></td>
+                </tr>
+                <tr>
+                    <td>Valor a Pagar:</td>
+                    <td><input type="number" id="valorPagar" readonly></td>
+                </tr>
+                <tr>
+                    <td>Fecha:</td>
+                    <td><input type="text" id="fecha" readonly></td>
+                </tr>
+                <tr>
+                    <td>Hora:</td>
+                    <td><input type="text" id="hora" readonly></td>
+                </tr>
+            </table>
+            <div class="botones-accion">
+                <button type="button" class="boton-divisas" onclick="guardarCompra()">Guardar Compra</button>
+                <button type="button" class="boton-divisas" onclick="limpiarFormulario()">Limpiar Formulario</button>
+                <a href="Transacciones.html" class="boton-divisas">Ver Carrito</a>
+            </div>
+        </form>
+
+        <div class="boton-inicio">
+            <a href="index.html">⬅ Volver al inicio</a>
+        </div>
+    </div>
+</body>
+
+</html>
