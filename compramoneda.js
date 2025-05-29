@@ -12,7 +12,7 @@ const tiposDocumento = [
 ];
 
 const monedas = [
-    { codigo: "USD", nombre: "Dólar", tasaCompra: 3900 },
+    { codigo: "USD", nombre: "Dólar", tasaCompra: 4025 },
     { codigo: "EUR", nombre: "Euro", tasaCompra: 4200 },
     { codigo: "GBP", nombre: "Libra Esterlina", tasaCompra: 5000 }
 ];
